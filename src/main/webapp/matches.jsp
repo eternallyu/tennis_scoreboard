@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style><%@ include file="/css/style.css"%></style>
     <script src="js/app.js"></script>
+    <style><%@ include file="/css/style.css"%></style>
 </head>
 
 <body>
@@ -52,9 +52,9 @@
             </tr>
             <c:forEach var="match" items="${finishedMatches}">
                 <tr>
-                    <td>${match.playerOne}</td>
-                    <td>${match.playerTwo}</td>
-                    <td><span class="winner-name-td">${match.winner}</span></td>
+                    <td>${match.playerOne()}</td>
+                    <td>${match.playerTwo()}</td>
+                    <td><span class="winner-name-td">${match.winner()}</span></td>
                 </tr>
             </c:forEach>
         </table>

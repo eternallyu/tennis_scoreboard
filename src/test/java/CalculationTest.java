@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import service.MatchScoreCalculationService;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 public class CalculationTest {
 
-    private static Match match;
+    Match match;
 
-    private final MatchScoreCalculationService matchScoreCalculationService = MatchScoreCalculationService.MATCH_SCORE_CALCULATION_SERVICE;
+    MatchScoreCalculationService matchScoreCalculationService = MatchScoreCalculationService.MATCH_SCORE_CALCULATION_SERVICE;
 
     @BeforeEach
     public void init() {

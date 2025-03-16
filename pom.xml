@@ -7,6 +7,8 @@
     <version>1.0-SNAPSHOT</version>
     <name>tennis_scoreboard Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
+
     <dependencies>
 
         <dependency>
@@ -38,7 +40,7 @@
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.1.0</version>
+            <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -47,6 +49,12 @@
             <artifactId>jakarta.servlet.jsp-api</artifactId>
             <version>4.0.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
         </dependency>
 
         <dependency>
@@ -82,8 +90,17 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
+                <configuration>
+                    <warName>ROOT</warName>
+                </configuration>
             </plugin>
 
             <plugin>
