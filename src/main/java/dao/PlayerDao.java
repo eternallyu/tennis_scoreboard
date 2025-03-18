@@ -15,6 +15,7 @@ import java.util.Optional;
 public class PlayerDao implements Dao<Long, Player> {
 
     public static final PlayerDao PLAYER_DAO = new PlayerDao();
+    public static final String FROM_PLAYER_BY_NAME_HQL = "from Player where name = :name";
 
     @Override
     public void save(Player entity) {
@@ -49,9 +50,8 @@ public class PlayerDao implements Dao<Long, Player> {
     }
 
     public Optional<Player> findByName(String name) {
-        String hql = "from Player where name = :name";
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery(hql, Player.class)
+            return session.createQuery(FROM_PLAYER_BY_NAME_HQL, Player.class)
                     .setParameter("name", name)
                     .uniqueResultOptional();
         } catch (HibernateException exception) {
